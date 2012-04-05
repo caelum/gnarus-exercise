@@ -2,9 +2,20 @@
 
 This project rocks and uses MIT-LICENSE.
 
+= Configuring a new project without user ownership
+
+rails new my_exercise
+cd my_exercise
 echo "gem gnarus_exercise" > Gemfile
+bundle install
+rake gnarus_exercise:install:migrations
+rake db:create db:migrate
+
+= Adding user ownership
+
 echo "gem devise" > Gemfile
 bundle install
 rails g devise:install
 rails g devise User
 rake gnarus_exercise:install:migrations
+rake db:create db:migrate

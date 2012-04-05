@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @exercise.content %>
+</p>
+
+<a href="/exercises/<%= @exercise.id%>/attempts">Preview</a> | 
+<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
+<%= link_to 'Back', exercises_path %>

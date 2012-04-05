@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  exercise: 
+  return_uri: MyText
+  solution: MyText
+
+two:
+  exercise: 
+  return_uri: MyText
+  solution: MyText

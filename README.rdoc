@@ -1,0 +1,10 @@
+= GnarusExercise
+
+This project rocks and uses MIT-LICENSE.
+
+echo "gem gnarus_exercise" > Gemfile
+echo "gem devise" > Gemfile
+bundle install
+rails g devise:install
+rails g devise User
+rake gnarus_exercise:install:migrations

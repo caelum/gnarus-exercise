@@ -36,3 +36,5 @@ root :to => "GnarusExercise::Exercises#index"
 - extract a rails template
 - update method UPDATE from exercise to be safe
 - exercisecontroller entire code should work with/without devise
+- no need to override gnarusexercises:exercise would be lovely
+- eval solution?

@@ -7,7 +7,7 @@ Configuring a new project without user ownership
 ================================================
 
 ```
-rails new my_exercise -m https://github.com/ricardovaleriano/gnarus-exercises/blob/master/template.rb
+rails new my_exercise -m https://raw.github.com/caelum/gnarus-exercise/master/template.rb
 ```
 
 You will be prompted about add <code>devise</code> into your application, then is up

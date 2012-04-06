@@ -17,9 +17,7 @@ to you accept or not. The template will handle all the configurations for you.
 TODO
 ====
 
-- regenerate the gem (the current one is outdated by the actual code status)
 - update method UPDATE from exercise to be safe
 - exercisecontroller entire code should work with/without devise
 - no need to override gnarusexercises:exercise would be lovely
 - eval solution?
-

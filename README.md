@@ -1,0 +1,25 @@
+GnarusExercise
+==============
+
+This project rocks and uses MIT-LICENSE.
+
+Configuring a new project without user ownership
+================================================
+
+```
+rails new my_exercise -m https://github.com/ricardovaleriano/gnarus-exercises/blob/master/template.rb
+```
+
+You will be prompted about add <code>devise</code> into your application, then is up
+to you accept or not. The template will handle all the configurations for you.
+
+
+TODO
+====
+
+- regenerate the gem (the current one is outdated by the actual code status)
+- update method UPDATE from exercise to be safe
+- exercisecontroller entire code should work with/without devise
+- no need to override gnarusexercises:exercise would be lovely
+- eval solution?
+

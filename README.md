@@ -38,6 +38,7 @@ root :to => "GnarusExercise::Exercises#index"
 TODO
 ====
 
+- regenerate the gem (the current one is outdated by the actual code status)
 - extract a rails template
 - update method UPDATE from exercise to be safe
 - exercisecontroller entire code should work with/without devise

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  attempt: 
+  solution: MyString
+  suceeded: false
+
+two:
+  attempt: 
+  solution: MyString
+  suceeded: false

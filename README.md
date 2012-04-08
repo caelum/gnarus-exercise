@@ -18,7 +18,6 @@ TODO
 ====
 
 - update method UPDATE from exercise to be safe
-- when exercise is loaded, it should invoke its parent JS to remove the loading message
 - rename to gnarus-exercise
 - we are using the index file to show an attempt, nasty. a GET to a better named method
 - an easier way to override the processing of an answer instead of rewriting attemp.rb

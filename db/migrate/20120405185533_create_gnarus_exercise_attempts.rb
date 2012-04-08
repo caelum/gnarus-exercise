@@ -3,7 +3,7 @@ class CreateGnarusExerciseAttempts < ActiveRecord::Migration
     create_table :gnarus_exercise_attempts do |t|
       t.references :exercise
       t.text :return_uri
-      t.text :solution
+      t.string :author_id
 
       t.timestamps
     end

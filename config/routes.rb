@@ -3,7 +3,9 @@ GnarusExercise::Engine.routes.draw do
   root :to => "exercises#index"
 
   resources :exercises do
-    resources :attempts
+    resources :attempts do
+      resources :executions
+    end
   end
   
 end

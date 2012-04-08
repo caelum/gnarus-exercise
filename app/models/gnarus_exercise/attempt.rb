@@ -1,13 +1,16 @@
 module GnarusExercise
   class Attempt < ActiveRecord::Base
     belongs_to :exercise
-    attr_accessible :return_uri, :solution
+    has_many :executions
+    attr_accessible :return_uri, :author_id
 
-    def not_finished
-      solution.nil?
-    end
     def full_return_uri
        (return_uri || "") + "?answer=" + (solution || "")
     end
+    
+    def process(params)
+      executions.create :solution => params[:path], :suceeded => true
+    end
+    
   end
 end

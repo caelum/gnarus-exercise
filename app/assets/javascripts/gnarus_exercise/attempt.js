@@ -1,23 +1,27 @@
 var gnarus = {
-	attemptForm : function(solution, viewer) {
+	attemptForm : function(solution, viewer, returnUri) {
 		
 		var viewChanged = function(execution) {
 			viewer(execution);
-			if(execution.suceeded) $('#exercise').submit();
-		};
-		
-		var processAnswer = function() {
-			var target = $('#exercise').attr('action');
-			$.post(target, {solution : solution}, function(r) {
-				viewChanged(r);
-			});
-		};
-		
-		return {
-			setup : function() {
-				$('#try').click(processAnswer);
+			if(execution.suceeded) {
+				var form = $('<form action=' + returnUri + '></form>');
+				var input = $('<input name="solution" />');
+				input.val(execution.solution);
+				form.insert(input);
+				form.submit();
 			}
 		};
 		
-	};	
+		return {
+			process : function() {
+				var target = $('#exercise').attr('action');
+				$.post(target, solution(), function(r) {
+					viewChanged(r);
+				});
+			},
+			setup : function() {
+				$('#try').click(this.process);
+			}
+		};	
+	}
 };

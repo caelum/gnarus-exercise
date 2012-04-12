@@ -9,7 +9,7 @@ module GnarusExercise
     end
     
     def process(params)
-      executions.create :solution => params[:path], :suceeded => true
+      executions.create :solution => params[:solution], :suceeded => params[:suceeded]
     end
     
   end

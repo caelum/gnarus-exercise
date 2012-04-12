@@ -20,4 +20,4 @@ TODO
 - update method UPDATE from exercise to be safe
 - rename to gnarus-exercise
 - we are using the index file to show an attempt, nasty. a GET to a better named method
-- an easier way to override the processing of an answer instead of rewriting attemp.rb (require 'attempt.rb' in random places is nasty)
+- automatic reload from ActivityProcessor

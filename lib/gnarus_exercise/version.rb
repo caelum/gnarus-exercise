@@ -1,3 +1,3 @@
 module GnarusExercise
-  VERSION = "1.0.2.snapshot"
+  VERSION = "1.0.2"
 end

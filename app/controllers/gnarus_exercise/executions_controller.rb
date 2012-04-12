@@ -5,8 +5,7 @@ module GnarusExercise
 
     def create
       @attempt = Attempt.find params[:attempt_id]
-      require 'attempt'
-      execution = @attempt.process params
+      execution = ::ActivityProcessor.process @attempt, params
       execution.save
       render :json => execution.to_json(:includes => :attempt)
     end

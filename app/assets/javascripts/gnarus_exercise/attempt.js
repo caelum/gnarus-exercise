@@ -7,7 +7,7 @@ var gnarus = {
 				var form = $('<form action=' + returnUri + '></form>');
 				var input = $('<input name="solution" />');
 				input.val(execution.solution);
-				form.insert(input);
+				form.insertAfter(input);
 				form.submit();
 			}
 		};

@@ -7,7 +7,6 @@ module GnarusExercise
       exercise = Exercise.find(params[:exercise_id])
       @attempt = exercise.attempts.create(params[:attempt])
       @attempt.save
-      require 'attempt'
     end
 
   end

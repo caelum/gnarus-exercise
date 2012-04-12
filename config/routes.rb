@@ -8,4 +8,6 @@ GnarusExercise::Engine.routes.draw do
     end
   end
   
+  match "/ping" => "status#ping"
+  
 end

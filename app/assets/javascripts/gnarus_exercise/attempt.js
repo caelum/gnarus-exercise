@@ -1,18 +1,23 @@
 var gnarus = {
 	attemptForm : function(solution, viewer, returnUri) {
 		
+		var finishWith = function(solution) {
+			var form = $('<form action=' + returnUri + '></form>');
+			var input = $('<input name="solution" />');
+			input.val(solution);
+			form.insertAfter(input);
+			form.submit();
+		};
+		
 		var viewChanged = function(execution) {
 			viewer(execution);
-			if(execution.suceeded) {
-				var form = $('<form action=' + returnUri + '></form>');
-				var input = $('<input name="solution" />');
-				input.val(execution.solution);
-				form.insertAfter(input);
-				form.submit();
-			}
+			if(execution.suceeded) finishWith(execution.solution);
 		};
 		
 		return {
+			skip : function() {
+				finishWith("skiped");
+			},
 			process : function() {
 				var target = $('#exercise').attr('action');
 				$.post(target, solution(), function(r) {

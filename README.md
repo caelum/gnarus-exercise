@@ -7,7 +7,7 @@ Configuring a new project
 =========================
 
 ```
-rails new my_exercise -m https://raw.github.com/caelum/gnarus-exercise/master/template.rb
+gnarus_activity my_exercise
 ```
 
 You will be prompted about adding <code>devise</code> into your application, then it is up

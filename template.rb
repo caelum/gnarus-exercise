@@ -16,8 +16,6 @@ puts "installing gems..."
 run "bundle install"
 
 rake "gnarus_exercise:install:migrations", :env => "development"
-#empty_directory "app/views/gnarus_exercise/attempts"
-#run "mkdir -p app/views/gnarus_exercise/attempts"
 create_file("app/views/gnarus_exercise/attempts/index.html.erb") do
   "<strong>Your exercise here</strong>"
 end

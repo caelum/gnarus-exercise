@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "A plugin structure for external exercises."
   s.description = "Create external exercises by mounting this plugin."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib,bin}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md", "template.rb"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.2"

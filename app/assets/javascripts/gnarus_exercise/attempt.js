@@ -2,7 +2,11 @@ var gnarus = {
 	attemptForm : function(solution, viewer, returnUri) {
 		
 		var finishWith = function(solution) {
-			var form = $('<form action=' + returnUri + '></form>');
+			var form = $('<form/>');
+			form.attr({
+				action : returnUri,
+				style : "display: none"
+			});
 			var input = $('<input name="solution" />');
 			input.val(solution);
 			input.appendTo(form);

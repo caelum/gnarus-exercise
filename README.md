@@ -7,11 +7,11 @@ Configuring a new project
 =========================
 
 ```
-gnarus_activity my_exercise
+gnarus activity my_exercise
 ```
 
 You will be prompted about adding <code>devise</code> into your application, then it is up
-to you accept or not (if you want to auth your exercises). The template will handle all configuration required for you.
+to you accept it (if you want authentication in your exercises) or not.
 
 
 TODO

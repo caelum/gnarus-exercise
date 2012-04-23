@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Title</th>
     <th>Content</th>
     <th></th>
     <th></th>
@@ -10,6 +11,7 @@
 
 <% @exercises.each do |exercise| %>
   <tr>
+    <td><%= exercise.title %></td>
     <td><%= exercise.content %></td>
     <td><%= link_to 'Show', exercise %></td>
     <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>

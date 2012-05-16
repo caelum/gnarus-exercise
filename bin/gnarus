@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+# encoding:utf-8
+template = File.expand_path("../../lib/activity_template.rb", __FILE__)
+
+puts ":::::::::::::::::::::::"
+puts "gnarus activity utility"
+puts ":::::::::::::::::::::::\n\n"
+
+if !ARGV[0]
+  puts "ooops, what do you want me to do?"
+  puts "did you want to create an activity?"
+  puts "    if so: gnarus activity [project]\n\n"
+  exit(0)
+end
+
+command = ARGV[0]
+option = ARGV[1]
+
+if command == "activity"
+  if !option
+    puts "you need a project name: gnarus activity [project]\n\n"
+    exit(0)
+  end
+  execution = "rails new #{option} -m #{template}"
+  puts "executando: #{execution}"
+  system(execution)
+  exit(0)
+end
+
+puts "i don't know any [#{command}]"
+puts "Y U NO TELL ME WHAT TO DO?!?!?\n\n"
+exit(0)

@@ -13,13 +13,12 @@ Gem::Specification.new do |s|
   s.summary     = "A plugin structure for external exercises."
   s.description = "Create external exercises by mounting this plugin."
 
-  s.files = Dir["{app,config,db,lib,bin}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md", "template.rb"]
+  s.files = Dir["{app,config,db,lib,bin}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 3.2.2"
-  # s.add_dependency "jquery-rails"
+  s.add_dependency "rails", "~> 3.2.3"
 
   s.add_development_dependency "sqlite3"
 
-  s.executables  = ["gnarus_activity"]
+  s.executables << "gnarus"
 end

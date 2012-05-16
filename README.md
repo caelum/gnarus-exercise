@@ -11,7 +11,7 @@ Configuring a new project
 =========================
 
 ```
-gnarus activity my_exercise
+gnarus_activity my_exercise
 ```
 
 You will be prompted about adding <code>devise</code> into your application, then it is up

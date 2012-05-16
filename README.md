@@ -21,7 +21,7 @@ to you accept it (if you want authentication in your exercises) or not.
 TODO
 ====
 
-- the CODE member should be renamed to something more meaningful (response)
+- the SOLUTION member should be renamed to something more meaningful (response)
 - generated template could come with a preconfigured index.erb just like to-know-plus
 - generated template should add gnarus_exercise version to gemfile
 - update method UPDATE from exercise to be safe

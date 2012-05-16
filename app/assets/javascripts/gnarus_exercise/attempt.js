@@ -29,8 +29,13 @@ var gnarus = {
 					viewChanged(r);
 				});
 			},
-			setup : function() {
-				$('#try').click(this.process);
+			setup : function(tryButton, skipButton) {
+				if(tryButton===undefined) {
+					$('#try').click(this.process);
+				} else {
+					tryButton.click(this.process);
+					skipButton.click(this.skip);
+				}
 			}
 		};	
 	}

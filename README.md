@@ -1,7 +1,11 @@
 GnarusExercise
 ==============
 
-This project rocks and uses MIT-LICENSE.
+This project rocks and uses MIT-LICENSE. Install
+
+```
+gem install gnarus_exercise
+```
 
 Configuring a new project
 =========================

@@ -1,4 +1,4 @@
-module GnarusExercise
+module GnarusActivity
   class Exercise < ActiveRecord::Base
     attr_accessible :author_id, :content, :title
     has_many :attempts

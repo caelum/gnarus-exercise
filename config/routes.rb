@@ -1,5 +1,5 @@
-GnarusExercise::Engine.routes.draw do
-  
+GnarusActivity::Engine.routes.draw do
+
   root :to => "exercises#index"
 
   resources :exercises do
@@ -7,7 +7,7 @@ GnarusExercise::Engine.routes.draw do
       resources :executions
     end
   end
-  
+
   match "/ping" => "status#ping"
-  
+
 end

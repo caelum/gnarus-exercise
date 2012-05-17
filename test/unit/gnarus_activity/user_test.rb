@@ -1,7 +1,7 @@
 require 'test_helper'
 
-module GnarusExercise
-  class ExecutionTest < ActiveSupport::TestCase
+module GnarusActivity
+  class UserTest < ActiveSupport::TestCase
     # test "the truth" do
     #   assert true
     # end

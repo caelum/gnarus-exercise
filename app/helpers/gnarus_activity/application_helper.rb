@@ -1,4 +1,4 @@
-module GnarusExercise
+module GnarusActivity
   module ApplicationHelper
   end
 end

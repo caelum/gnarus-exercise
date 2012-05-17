@@ -1,4 +1,4 @@
-module GnarusExercise
+module GnarusActivity
   class StatusController < ApplicationController
   
     skip_before_filter :verify_authenticity_token

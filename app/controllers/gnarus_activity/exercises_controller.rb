@@ -1,4 +1,4 @@
-module GnarusExercise
+module GnarusActivity
   class ExercisesController < ApplicationController
   
     before_filter :authenticate_user! if defined?(Devise)

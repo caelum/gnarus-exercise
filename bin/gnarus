@@ -18,7 +18,7 @@ option = ARGV[1]
 
 if command == "activity"
   if !option
-    puts "you need a project name: gnarus activity [project]\n\n"
+    puts "you need a project name, try: gnarus activity [project]\n\n"
     exit(0)
   end
   execution = "rails new #{option} -m #{template}"

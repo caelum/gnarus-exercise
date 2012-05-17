@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount GnarusExercise::Engine => "/gnarus_exercise"
+  mount GnarusActivity::Engine => "/gnarus_activity"
 end

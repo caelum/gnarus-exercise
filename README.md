@@ -1,17 +1,17 @@
-GnarusExercise
+GnarusActivity
 ==============
 
 This project rocks and uses MIT-LICENSE. Install
 
 ```
-gem install gnarus_exercise
+gem install gnarus_activity
 ```
 
 Configuring a new project
 =========================
 
 ```
-gnarus_activity my_exercise
+gnarus activity my_project
 ```
 
 You will be prompted about adding <code>devise</code> into your application, then it is up
@@ -31,7 +31,7 @@ gnarus.attemptForm({ solution : function() {},
 
 When clicking in the try button, the solution function is invoked. It should return the response to send to the rails server for processing.
 
-. Processing the user response
+### Processing the user response
 
 The method ActivityProcessor.process(attempt, params) is invoked.
 It should return an Execution with the field succeded=true or false.
@@ -49,7 +49,7 @@ end
 
 The default implementation of this method *always* return suceeded = true.
 
-. Showing the response to the user
+### Showing the response to the user
 
 After processing, the callback is invoked with the result.succeeded.
 
@@ -61,9 +61,8 @@ TODO
 ====
 
 - the SOLUTION member should be renamed to something more meaningful (response)
-- generated template should add gnarus_exercise version to gemfile
+- generated template should add gnarus_activity version to gemfile
 - update method UPDATE from exercise to be safe
-- rename to gnarus-exercise
 - we are using the index file to show an attempt, nasty. a GET to a better named method
 - automatic reload from ActivityProcessor
 - includes a javascript with a *gnarus* object and, if a attemptForm function not

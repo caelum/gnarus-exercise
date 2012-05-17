@@ -1,0 +1,35 @@
+<span><%= @attempt.exercise.title %></span><br />
+
+<form id="exercise" method="POST" action="<%= exercise_attempt_executions_url(@attempt.exercise, @attempt)%>">
+<input name="solution" id="solution" value="" />
+<input type="button" id="try" value="Verificar">
+<input type="button" id="skip" value="Ignorar e continuar">
+</form>
+
+<div id="result"></div>
+
+<script>
+$(function() {
+	gnarus.attemptForm({
+		
+		solution : function() {
+			/* if you want to do something with your client code
+			   before sending to the rails server, do it NOW! */
+			return {solution : $('#solution').val()};
+		}, 
+		
+		callback : function(r) {
+			/* r.suceeded says if it was a success*/
+		  var successMessage = "success";
+		  var errorMessage = "failed";
+		  $('#result').html(r.suceeded ? successMessage : errorMessage);
+		},
+		
+		allowsSkip : true,
+		
+		gnarusUri : '<%=@attempt.return_uri%>'
+		
+	}).setup();
+});
+
+</script>

@@ -1,22 +1,38 @@
 var gnarus = {
-	attemptForm : function(solution, viewer, returnUri) {
-		
-		var finishWith = function(solution) {
-			var form = $('<form/>');
-			form.attr({
-				action : returnUri,
-				style : "display: none"
-			});
-			var input = $('<input name="solution" />');
-			input.val(solution);
-			input.appendTo(form);
-			form.appendTo($('body'));
-			form.submit();
+	server : function(uri) {
+		return {
+			send : function(solution) {
+				var form = $('<form/>');
+				form.attr({
+					action : returnUri,
+					style : "display: none"
+				});
+				var input = $('<input name="solution" />');
+				input.val(solution);
+				input.appendTo(form);
+				form.appendTo($('body'));
+				form.submit();
+			}
 		};
+	},
+	
+	/* 
+	 * getUserResponse ==> function that returns the parameters for the form
+	 * updateView ==> callback that allows you to update the view
+	*/
+	attemptForm : function(options) {
 		
-		var viewChanged = function(execution) {
-			viewer(execution);
-			if(execution.suceeded) finishWith(execution.solution);
+		var getUserResponse = options.solution;
+		var updateView = options.callback;
+		
+		var ui = {
+			viewChanged = function(execution) {
+				updateView(execution);
+				if(execution.suceeded){
+					var server = gnarus.server(options.gnarusUri);
+					server.send(execution.solution);
+				}
+			}
 		};
 		
 		return {
@@ -25,16 +41,20 @@ var gnarus = {
 			},
 			process : function() {
 				var target = $('#exercise').attr('action');
-				$.post(target, solution(), function(r) {
-					viewChanged(r);
+				$.post(target, getUserResponse(), function(r) {
+					ui.viewChanged(r);
 				});
 			},
 			setup : function(tryButton, skipButton) {
-				if(tryButton===undefined) {
-					$('#try').click(this.process);
-				} else {
-					tryButton.click(this.process);
+				tryButton = tryButton || $('#try');
+				skipButton = skipButton || $('#skip');
+
+				tryButton.click(this.process);
+				
+				if(options.allowsSkip) {
 					skipButton.click(this.skip);
+				} else {
+					skipButton.hide();
 				}
 			}
 		};	

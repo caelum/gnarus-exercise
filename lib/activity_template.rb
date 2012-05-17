@@ -17,35 +17,14 @@ puts "installing gems..."
 run "bundle install"
 
 rake "gnarus_exercise:install:migrations", :env => "development"
-create_file("app/views/gnarus_exercise/attempts/index.html.erb") do
-  %Q(<span><%= @attempt.exercise.title %></span><br />
 
-<form id="exercise" method="POST" action="<%= exercise_attempt_executions_url(@attempt.exercise, @attempt)%>">
-	<input name="solution" id="solution" value="" />
-	<input type="button" id="try" value="Verificar">
-	<input type="button" id="skip" value="Ignorar e continuar">
-</form>
-
-<div id="result"></div>
-
-<script>
-$(function() {
-	var form = gnarus.attemptForm(extractSolution, showToUser, '<%=@attempt.return_uri%>');
-	form.setup();
-	$('#skip').click(form.skip);
-});
-
-function showToUser(r) {
-  successMessage = "sucesso"
-  errorMessage = "no no"
-	$('#result').html(r.suceeded ? successMessage : errorMessage);
-}
-
-function extractSolution() {
-	return {solution : $('#solution').val()};
-}
-</script>)
+def copy_template(name)
+  origin = File.expand_path("../lib/gnarus_exercise/" + name, __FILE__)
+  target = "app/views/gnarus_exercise/" + name
+  copy_file origin, target
 end
+
+copy_template "attempts/index.html.erb"
 
 if @devised
   puts "generating devise"

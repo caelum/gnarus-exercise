@@ -19,7 +19,7 @@ run "bundle install"
 rake "gnarus_activity:install:migrations", :env => "development"
 
 def copy_template(name)
-  origin = File.expand_path("../templates/gnarus_activity/#{name}", __FILE__)
+  origin = File.expand_path("templates/gnarus_activity/#{name}", File.dirname(__FILE__))
   target = "app/views/gnarus_activity/#{name}"
   copy_file origin, target
 end

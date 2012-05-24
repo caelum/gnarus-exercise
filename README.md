@@ -66,6 +66,7 @@ redirected to the gnarusUri. The exercise finishes
 TODO
 ====
 
+- Ensure that sqlite3 gem is only required on dev and test (heroku doesn't like it)
 - the SOLUTION member should be renamed to something more meaningful (response)
 - generated template should add gnarus_activity version to gemfile
 - update method UPDATE from exercise to be safe

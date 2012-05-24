@@ -24,28 +24,32 @@ The default index.html.erb displays a solution field where the user types his re
 
 Due to the invocation of:
 
+```javascript
 gnarus.attemptForm({ solution : function() {},
 					 callback : function(result) {},
 					 gnarusUri : '',
 					 allowsSkip : true }).setup();
+```
 
 When clicking in the try button, the solution function is invoked. It should return the response to send to the rails server for processing.
 
 ### Processing the user response
 
-The method ActivityProcessor.process(attempt, params) is invoked.
+The method <code>ActivityProcessor#process(attempt, params)</code> is invoked.
 It should return an Execution with the field succeded=true or false.
 Example:
 
+```ruby
 class ActivityProcessor
   def self.process(attempt, params)
 	isCorrect = params[:solution]=="42"
-    attempt.executions.create {
-		solution: params[:solution],
-		suceeded: isCorrect
-	}
+    attempt.executions.create (
+      solution: params[:solution],
+      suceeded: isCorrect
+	  )
   end
 end
+```
 
 The default implementation of this method *always* return suceeded = true.
 

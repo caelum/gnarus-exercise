@@ -31,7 +31,8 @@ gnarus.attemptForm({ solution : function() {},
 					 allowsSkip : true }).setup();
 ```
 
-When clicking in the try button, the solution function is invoked. It should return the response to send to the rails server for processing.
+When clicking in the try button, the solution function is invoked. It should return
+the response to send to the rails server for processing.
 
 ### Processing the user response
 
@@ -58,7 +59,8 @@ The default implementation of this method *always* return suceeded = true.
 After processing, the callback is invoked with the result.succeeded.
 
 (1) If it is false, you should display an error message.
-(2) If it is true, display what you want. In this case, the page will be AUTOMATICALLY redirected to the gnarusUri. The exercise finishes
+(2) If it is true, display what you want. In this case, the page will be AUTOMATICALLY
+redirected to the gnarusUri. The exercise finishes
 
 
 TODO
@@ -69,5 +71,3 @@ TODO
 - update method UPDATE from exercise to be safe
 - we are using the index file to show an attempt, nasty. a GET to a better named method
 - automatic reload from ActivityProcessor
-- includes a javascript with a *gnarus* object and, if a attemptForm function not
-  exists, provide one which will be enough for testing purpouses.
